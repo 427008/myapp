@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# Объяснительная записка
+## Изучение примеров
+Я прогнал три примера:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
 
-## Available Scripts
+[Storybook for React tutorial](https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/)
 
-In the project directory, you can run:
+[React, TypeScript, and TDD](https://www.jetbrains.com/webstorm/guide/tutorials/react_typescript_tdd/)
 
-### `npm start`
+Этого достаточно что бы начать писать, но React сам по себе подразумевает верстку html & css - оптимально было бы выгрузить дизайн из Figma. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+В Figma предлагается использовать [Anima](https://www.figma.com/community/plugin/857346721138427857/Anima---Figma-to-HTML%2C-React-%26-Vue-code). 
+Неплохой плагин, но без денег дают только попробовать, кроме того выгружают только React-(jsx)-код и css. Результат - компоненты на кассах, никаких assets. Это не приложение а макет, который не работает.
+[Desech Studio](https://www.desech.com/) - тоже предлагают выгрузку из Figma - не работает (выгрузка нерабочая, предлагают купить).
+Пока что из примеров и неудачи с выгрузкой дизайна я понял, что мне придется верстать html + css.
+## React контроль компонента и использование API
+Если следовать этой модели - придется писать очень много кода (на каждом уровне вложенности), как я понял это решают помощью Redux - управления состоянием приложения. Тут планируется много действий пользователя, видимо неплохо было бы использовать Redux.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+То что я видел в примерах подразумевает, что компоненты сами взаимодействуют с API (fetch). Тут простой CRUD и реляционные таблицы никак не подойдут, API должен будет дать JSON со сложной структурой. Это много кода в API, данные должны прийти "разжеванными".
+[Асинхронная загрузка данных](https://learn-reactjs.ru/training-project/async-data-loading) - работа с API в Service-стиле очень толковый пример, но это еще день.
+## Выводы
+1. HTML+css - у меня нет навыка быстрой и качественной верстки - я пользуюсь готовыми компонентами, дизайн в моей работе ~ 5%, это самое проблемное место.
+2. Redux - отдельная технология контроля состояния, которую тоже придется изучить, в Angular двусторонний биндинг, там вообще другой подход. Работа с API + React router, это еще время на изучение, скорее всего 2 дня, которые уйдут "в процессе"
+### От себя
+Писать на React сразу можно только на уровне крестики нолики - обработка клика на 9 кнопках. Не возьмусь писать в стиле "сейчас изобразим кнопочку, окошко, потом еще чекбоксик и еще и еще". Рано или поздно вентилятор сломается..
+Я потратил 3 дня на изучение React, и надо еще 1-2. Даже если начать что то делать - 100% я "вывалюсь" на день другой на темах Redux, Service & Router
+Все равно скорость будет так себе, иногда будут затыки. Могу сделать API, поднять VM, Node + Nginx, MySQL, Mongo.. и, если не передумали, написать приложение на Angular.
